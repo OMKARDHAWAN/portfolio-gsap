@@ -1,5 +1,5 @@
 const rightarrow = document.querySelectorAll(".right-arrow");
-
+const projectCard = document.querySelectorAll('.project-card');
 const modal = document.querySelector(".project-modal");
 const modal1 = document.createElement("div");
 const modal2 = document.createElement("div");
@@ -137,6 +137,30 @@ rightarrow.forEach(function (btn) {
     modal.style.display = "flex";
   });
 });
+
+// Add hover event to project cards
+projectCard.forEach(function(card) {
+  card.addEventListener("mouseenter", function(event) {
+  const arrow = card.querySelector('.right-arrow'); 
+ 
+    if (arrow.classList.contains("MakeAblog")) {
+      // Add a hover effect on the respective arrow
+      arrow.classList.add("hover-btn");
+    } else if (arrow.classList.contains("BookYourTable")) {
+      arrow.classList.add("hover-btn");
+    } else if (arrow.classList.contains("Art-Exlporer")) {
+      arrow.classList.add("hover-btn");
+    }
+  });
+
+  card.addEventListener("mouseleave", function() {
+    const arrow = card.querySelector(".right-arrow");
+
+    // Remove the hover effect when the mouse leaves
+  arrow.classList.remove("hover-btn","hover-btn","hover-btn");
+  });
+});
+
 
 // created event to close modal on click event of cross
 cross.addEventListener("click", function (event) {
