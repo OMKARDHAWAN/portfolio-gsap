@@ -5,11 +5,21 @@ const modal1 = document.createElement("div");
 const modal2 = document.createElement("div");
 const modal3 = document.createElement("div");
 const modal4 = document.createElement("div");
+const projectheading = document.querySelector(".project-heading");
+const h2 = document.createElement("h2");
+const span = document.createElement("span");
+var word = "WORK"
+var clutter = ""
+const splitedword = word.split("");
 
-// project-modal
-// two div cross-btn project-info
-// cross-btn-cross anad project-info - project-info1 & project-info2
-// cross-btn with svg | project-info1 img and project-info2 - heading h2 and p tag
+console.log(splitedword);
+
+splitedword.forEach(function (char) {
+  clutter += `<span>${char}</span>`
+  h2.innerHTML = clutter
+  projectheading.appendChild(h2);
+})
+console.log(projectheading);
 
 // fetch data from project.json file and insert created modal
 fetch("project.json")
@@ -139,12 +149,13 @@ rightarrow.forEach(function (btn) {
 });
 
 // Add hover event to project cards
-projectCard.forEach(function(card) {
-  card.addEventListener("mouseenter", function(event) {
-  const arrow = card.querySelector('.right-arrow'); 
- 
+projectCard.forEach(function (card) {
+  card.addEventListener("mouseenter", function (event) {
+    const arrow = card.querySelector('.right-arrow');
+
     if (arrow.classList.contains("MakeAblog")) {
       // Add a hover effect on the respective arrow
+      console.log("yes")
       arrow.classList.add("hover-btn");
     } else if (arrow.classList.contains("BookYourTable")) {
       arrow.classList.add("hover-btn");
@@ -153,11 +164,12 @@ projectCard.forEach(function(card) {
     }
   });
 
-  card.addEventListener("mouseleave", function() {
+  card.addEventListener("mouseleave", function () {
+
     const arrow = card.querySelector(".right-arrow");
 
     // Remove the hover effect when the mouse leaves
-  arrow.classList.remove("hover-btn","hover-btn","hover-btn");
+    arrow.classList.remove("hover-btn", "hover-btn", "hover-btn");
   });
 });
 
@@ -166,3 +178,141 @@ projectCard.forEach(function(card) {
 cross.addEventListener("click", function (event) {
   modal.style.display = "";
 });
+
+// -------------------------- navabr scroll animation ------------------------ //
+// 1.condition 1 at initial postion navbar background will be transparent
+// 2. condition 2 on scroll 10 px navbar background should become white
+
+// const navbar = document.querySelector('.navbar');
+
+// window.addEventListener('scroll',function(scroll){
+//   const scrollPosition =this.scrollY;
+//   console.log(scrollPosition);
+//   if(scrollPosition >10){
+//     navbar.classList.add('navbarOnScroll');
+//   }
+//   else{
+//     navbar.classList.remove('navbarOnScroll');
+//   }
+// })
+
+
+
+
+
+
+
+// --------------------------- gsap animation -------------------------------- //
+const t1 = gsap.timeline();
+
+gsap.from("#circle1", {
+  x: -50,
+  y: -30,
+  opacity: 0,
+  duration: 1.5,
+})
+gsap.from("#circle2", {
+  x: -50,
+  y: 30,
+  opacity: 0,
+  duration: 1.5,
+})
+gsap.from("#circle3", {
+  x: 50,
+  y: 30,
+  opacity: 0,
+  duration: 1.5,
+})
+gsap.from("#circle4", {
+  x: 50,
+  y: -30,
+  opacity: 0,
+  duration: 1.5,
+})
+t1.from(".nav-ul", {
+  y: -30,
+  opacity: 0,
+  duration: 0.5,
+  delay: 1.1,
+  stagger: 2
+})
+
+t1.from(".text", {
+  y: -30,
+  opacity: 0,
+  stagger: 0.5
+})
+
+t1.from(".nav-btn", {
+  opacity: 0,
+  scale: 2,
+  rotate: 20,
+})
+t1.from(".Social-media a", {
+  opacity: 0,
+  y: -30,
+  stagger: 0.5
+})
+
+t1.from(".about-main", {
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".about-main",
+    scroller: "body",
+    start: "top 90%",
+    end: "top 50%",
+    scrub: 1
+  }
+})
+
+
+
+
+
+t1.to(".card", {
+  x: -3790,
+  zIndex: -1,
+  ease: "power1.out",
+  scrollTrigger: {
+    trigger: ".skill",
+    scroller: "body",
+    scrub: 2,
+    pin: true,
+    start: "top 0%",
+    end: "top -90%",
+    // markers:true
+  }
+})
+
+
+
+
+
+const t2 = gsap.timeline();
+
+t2.from(".work-card", {
+ opacity:0,
+ duration:3,
+ scale:1.5,
+//  stagger:0.5,
+  scrollTrigger: {
+    trigger: ".work-div",
+    scroller: "body",
+    start: "top 50%",
+    // markers:true
+  }
+})
+
+
+
+
+//----------------------------------  dark mode  -------------------------------//
+
+// const darkmodebtn = document.querySelector("");
+
+// darkmodebtn.addEventListener("click",function(click){
+//  if(click){
+//   document.body
+//  }   
+// })
