@@ -1,0 +1,26 @@
+{
+   "projects" :  [{
+        "id":1,
+        "title": "MakeAblog – SEO-Friendly Blog Platform",
+        "description": "MakeAblog is a dynamic blogging platform developed with a combination of Next.js for server-side rendering, React.js for creating interactive user interfaces, and Tailwind CSS for responsive design. It incorporates Firebase for real-time database management and secure hosting, ensuring seamless user interaction and efficient content management. The platform is optimized with on-page SEO to boost search engine visibility and enhance performance. Additionally, smooth animations powered by Framer Motion are implemented to engage users and create an enjoyable browsing experience. This project showcases the power of modern web technologies in building a user-friendly, high-performance platform.",
+        "technologies": ["NextJs", "ReactJS","tailwind Css" ,"Firebase","Framer-motion"],
+        "imgUrl":"img/project-thumbnails/MakeAblog.png",
+        "URL":"https://blogwebsite-omega.vercel.app/"
+    },
+    {
+        "id":"2",
+        "title": "BookYourTable – Online Solution for Restaurant Reservation",
+        "description": "BookYourTable is a convenient online solution for restaurant reservations, making it easy for customers to book tables at their favorite dining spots. The platform's frontend is developed using Next.js, React.js, Framer Motion, and Tailwind CSS, offering a dynamic and interactive user experience. To ensure the website is responsive and visually appealing, Tailwind CSS is used for styling, while Framer Motion adds smooth animations. Hosted on Vercel, the site is continuously optimized for mobile devices, providing a seamless booking experience for users on the go.",
+        "technologies": ["NextJs", "ReactJS","Framer-motion","tailwind Css"],
+        "imgUrl":"img/project-thumbnails/Bookyourtable.png",
+        "URL":"https://bookyourtable.vercel.app/"
+    },
+    {    
+        "id":3,
+        "title": "ART-Explorer: Discover Unique Artworks",
+        "description": "ART-Explorer is an innovative online marketplace that connects art creators with collectors. The website's frontend is developed using HTML, CSS, and JavaScript, ensuring dynamic and interactive functionality. To enhance the site's styling and responsiveness, the Bootstrap framework is utilized. Hosted on Netlify, ongoing efforts are focused on optimizing the website for mobile devices.",
+        "technologies": ["Html 5","Bootstrap","Css 3","JS"],
+        "imgUrl":"img/project-thumbnails/artExplorer.png",
+        "URL":"https://art-explorer.netlify.app/"
+    }]
+}
